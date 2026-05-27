@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" class="Calculator_Frm">
+        <div class="row-1 row">
+          <label for="">First Value:</label>
+          <input type="text" id="first_value" value="0" />
+        </div>
+        <div class="row-2 row">
+          <label for="">Second Value:</label>
+          <input type="text" id="second_value" value="0" />
+        </div>
+        <div class="row-3 row">
+          <button class="btn-operator" type="button" value="+" id="addition">
+            +
+          </button>
+          <button class="btn-operator" type="button" value="-" id="substract">
+            -
+          </button>
+          <button class="btn-operator" type="button" value="*" id="multiply">
+            x
+          </button>
+          <button class="btn-operator" type="button" value="/" id="divided">
+            /
+          </button>
+        </div>
+        <div class="row-4 row">
+          <label for="">Result:</label>
+          <input type="text" id="result" value="0" />
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    let a = document.getElementById("first_value").value;
+    let b = document.getElementById("second_value").value;
+    let result = 0;
+    let btn = document.querySelectorAll(".btn-operator");
+    btn.forEach((e) => {
+      e.addEventListener("click", () => {
+        if (e.value == "+") result = Number(a) + Number(b);
+        else if (e.value == "-") result = Number(a) - Number(b);
+        else if (e.value == "*") result = Number(a) * Number(b);
+        else if (e.value == "/") result = Number(a) / Number(b);
+        document.getElementById("result").value = result;
+      });
+    });
+  </script>
+</html>
